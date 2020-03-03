@@ -20,3 +20,4 @@ jobs:
         bundle install --jobs 4 --retry 3 --without production
         bundle exec rails db:migrate RAILS_ENV=test
         bundle exec rake
+        gem install sqlite3 -v '1.3.13'
