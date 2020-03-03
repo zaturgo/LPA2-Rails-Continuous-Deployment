@@ -16,6 +16,7 @@ jobs:
     - name: Build and test with Rake
       run: |
         sudo apt-get install -y libsqlite3-dev
+        sudo apt-get install -y sqlite3-doc
         gem install bundler
         bundle install --jobs 4 --retry 3 --without production
         bundle exec rails db:migrate RAILS_ENV=test
