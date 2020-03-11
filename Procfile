@@ -1,3 +1,8 @@
+# create db
+web: bin/rails db:migrate
 
-release: bundle exec bin/rails db:migrate
-web: bundle exec bin/rails server -p $PORT -e $RAILS_ENV
+# launch server
+web: bin/rails server -p $PORT -e $RAILS_ENV
+
+# web: bundle exec puma -C config/puma.rb
+# release: rake db:migrate
