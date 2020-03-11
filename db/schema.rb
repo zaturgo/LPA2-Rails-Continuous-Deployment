@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20200307104410) do
     t.string "nutriscore"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "code"
+    t.string "code", null:false
   end
 
 end
