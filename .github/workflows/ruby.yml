@@ -8,16 +8,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Ruby 2.6
-      uses: actions/setup-ruby@v1
-      with:
-        ruby-version: 2.6.x
-    - name: Build and test with Rake
-      run: |
-        gem install bundler
-        bundle config set without 'production'
-        bundle install --jobs 4 --retry 3
-        bundle exec rails db:migrate RAILS_ENV=test
-        bundle exec rake
-
+      - uses: actions/checkout@v2
+      - name: Set up Ruby 2.6
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+      - name: Build and test with Rake
+        run: |
+          sudo apt-get install -y libsqlite3-dev
+          gem install bundler
+          bundle config set without 'production'
+          bundle install --jobs 4 --retry 3
+          bundle exec rails db:migrate RAILS_ENV=test
+          bundle exec rake
