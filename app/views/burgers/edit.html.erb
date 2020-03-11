@@ -1,6 +1,12 @@
-<h1>Editing Burger</h1>
+<div class="container">
+  <h1>Editing Burger</h1>
 
-<%= render 'form', burger: @burger %>
+  <div class="card">
+    <div class="card-body">
+      <%= render 'form', burger: @burger %>
+    </div>
+  </div>
 
-<%= link_to 'Show', @burger %> |
-<%= link_to 'Back', burgers_path %>
+  <%= link_to 'Show', @burger %> |
+  <%= link_to 'Back', burgers_path %>
+</div>
